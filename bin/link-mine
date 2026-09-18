@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# Relink authored skills from mine/ into skills/, the flat dir agents discover.
+# skills/ is gitignored and fully derived: symlinks from here + `npx skills experimental_install`.
+set -euo pipefail
+
+root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$root"
+mkdir -p mine skills
+
+# Drop links into mine/ whose target is gone (skill renamed or deleted).
+for link in skills/*; do
+  [ -L "$link" ] || continue
+  case "$(readlink "$link")" in
+    ../mine/*) [ -e "$link" ] || { rm "$link"; echo "pruned  $(basename "$link")"; } ;;
+  esac
+done
+
+linked=0 skipped=0
+for dir in mine/*/; do
+  [ -d "$dir" ] || continue
+  skill="$(basename "$dir")"
+  # A real directory here is a vendored skill of the same name; linking would
+  # nest inside it. Report the collision instead of silently shadowing it.
+  if [ -e "skills/$skill" ] && [ ! -L "skills/$skill" ]; then
+    echo "SKIP    $skill — skills/$skill is a real directory (name collision with a locked skill)" >&2
+    skipped=$((skipped + 1))
+    continue
+  fi
+  ln -sfn "../mine/$skill" "skills/$skill"
+  linked=$((linked + 1))
+done
+
+echo "linked $linked skill(s) from mine/"
+[ "$skipped" -eq 0 ] || { echo "$skipped collision(s) — rename in mine/ or remove the locked skill" >&2; exit 1; }

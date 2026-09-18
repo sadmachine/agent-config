@@ -1,2 +1,6 @@
 /.system
 /superpowers
+
+# skills/ is fully derived: symlinks from mine/ (bin/link-mine) +
+# vendored skills from skills-lock.json (npx skills experimental_install).
+/skills/
