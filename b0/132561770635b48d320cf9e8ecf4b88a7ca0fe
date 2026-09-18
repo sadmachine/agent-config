@@ -1,0 +1,21 @@
+.gitignore
+  s_9c995d47820ad1::t_1ad2ad45cc7fa7 3-6
+bin/link-mine
+  s_9c995d47820ad1::t_3a0846e30da5f8 1-34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b0132561770635b48d320cf9e8ecf4b88a7ca0fe",
+  "prompts": {},
+  "sessions": {
+    "s_9c995d47820ad1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ee9a1c36-61da-459e-99ec-9b18770c0e57",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Austin Fishbaugh <austinfishbaugh@imarc.com>"
+    }
+  }
+}
