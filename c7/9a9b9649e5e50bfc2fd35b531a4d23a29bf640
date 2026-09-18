@@ -1,0 +1,14 @@
+README.md
+  h_b44430a3281f44 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c79a9b9649e5e50bfc2fd35b531a4d23a29bf640",
+  "prompts": {},
+  "humans": {
+    "h_b44430a3281f44": {
+      "author": "Austin Fishbaugh <austinfishbaugh@imarc.com>"
+    }
+  }
+}
