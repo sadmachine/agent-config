@@ -1,0 +1,21 @@
+.skill-lock.json
+  s_9c995d47820ad1::t_81a149789670a7 271-450
+skills-lock.json
+  s_9c995d47820ad1::t_81bec666e88744 1-287
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "3c4769a09fa39c2cb2b45f8cb3b36e17a3eeeaba",
+  "prompts": {},
+  "sessions": {
+    "s_9c995d47820ad1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ee9a1c36-61da-459e-99ec-9b18770c0e57",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Austin Fishbaugh <austinfishbaugh@imarc.com>"
+    }
+  }
+}
