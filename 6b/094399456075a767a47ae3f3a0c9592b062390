@@ -1,0 +1,19 @@
+mine/fuse-dev-push/SKILL.md
+  s_a2f08eb602cf23::t_0a658413b142b7 1-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6b094399456075a767a47ae3f3a0c9592b062390",
+  "prompts": {},
+  "sessions": {
+    "s_a2f08eb602cf23": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1839cec7-f1d5-4823-bbec-716449432dcc",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Austin Fishbaugh <austinfishbaugh@imarc.com>"
+    }
+  }
+}
