@@ -18,8 +18,6 @@ Migrations are generated in the society checkout because that is where the datab
 
 ## Procedure
 
-`source ops-commands.sh` first.
-
 1. **Baseline, before editing any entity:**
    ```sh
    ops hiraeth iwmigrate:status   # New Migrations: 0, Executed Unavailable Migrations: 0
