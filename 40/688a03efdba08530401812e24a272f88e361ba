@@ -1,0 +1,20 @@
+docs/superpowers/specs/2026-10-14-mining-agent-history-design.md
+  s_a5703568e55c96::t_03eb0f250557df 58
+  s_a5703568e55c96::t_28f8ed0d4a410d 1-57,59-295
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "40688a03efdba08530401812e24a272f88e361ba",
+  "prompts": {},
+  "sessions": {
+    "s_a5703568e55c96": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f1ba258c-c18b-4510-82a1-e4edc4a1eb00",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Austin Fishbaugh <austinfishbaugh@imarc.com>"
+    }
+  }
+}
