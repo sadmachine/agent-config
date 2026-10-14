@@ -1,0 +1,2 @@
+{"timestamp":"2026-09-04T08:00:00.000Z","type":"session_meta","payload":{"id":"0199cccc-0003-7000-8000-000000000000","timestamp":"2026-09-04T08:00:00.000Z","cwd":"/fixture/app","source":{"subagent":{"other":"guardian"}}}}
+{"type":"response_item","payload":{"type":"message","role":"user","content":[{"type":"input_text","text":"Assess the exact planned action"}]}}

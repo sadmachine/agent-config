@@ -1,0 +1,3 @@
+{"timestamp":"2026-01-05T09:00:00.000Z","type":"session_meta","payload":{"id":"0188bbbb-0002-7000-8000-000000000000","timestamp":"2026-01-05T09:00:00.000Z","cwd":"/fixture/app","source":"vscode"}}
+{"type":"event_msg","payload":{"type":"user_message","message":"Add a migration for the orders table"}}
+{"type":"response_item","payload":{"type":"message","role":"user","content":[{"type":"input_text","text":"Add a migration for the orders table"}]}}

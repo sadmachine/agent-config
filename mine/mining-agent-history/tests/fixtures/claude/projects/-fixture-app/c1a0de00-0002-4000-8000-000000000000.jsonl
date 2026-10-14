@@ -1,0 +1,4 @@
+{"type":"user","cwd":"/fixture/app/.worktrees/feature-x","gitBranch":"feature-x","timestamp":"2026-09-02T09:00:00.000Z","message":{"role":"user","content":"Merge the feature branch into dev and push dev to origin please"}}
+{"type":"user","message":{"role":"user","content":"<local-command-caveat>Caveat: ignore</local-command-caveat>"}}
+{"type":"user","message":{"role":"user","content":"[Image: original 100x100]"}}
+{"type":"assistant","message":{"role":"assistant","content":[{"type":"text","text":"Merged and pushed."}]}}

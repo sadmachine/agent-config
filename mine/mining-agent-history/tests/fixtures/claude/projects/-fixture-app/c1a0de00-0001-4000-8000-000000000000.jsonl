@@ -1,0 +1,18 @@
+{"type":"file-history-snapshot","messageId":"m0","snapshot":{}}
+{"type":"attachment","cwd":"/fixture/app","gitBranch":"main","timestamp":"2026-09-01T10:00:00.000Z","attachment":{"type":"skill_listing","content":"many skills"}}
+{"type":"user","cwd":"/fixture/app","gitBranch":"main","timestamp":"2026-09-01T10:00:01.000Z","origin":{"kind":"human"},"message":{"role":"user","content":"Merge the feature branch into dev and push dev to origin"}}
+{"type":"user","isMeta":true,"message":{"role":"user","content":[{"type":"text","text":"Base directory for this skill: /x/skills/foo\n\n# Foo"}]}}
+{"type":"user","message":{"role":"user","content":"<system-reminder>be terse</system-reminder>"}}
+{"type":"user","message":{"role":"user","content":"<command-name>/clear</command-name>\n<command-message>clear</command-message>"}}
+{"type":"user","message":{"role":"user","content":"<command-name>/fuse-dev-push</command-name>"}}
+{"type":"user","origin":{"kind":"task-notification"},"message":{"role":"user","content":"<task-notification>done</task-notification>"}}
+{"type":"assistant","message":{"role":"assistant","content":[{"type":"thinking","thinking":"secret plan"},{"type":"text","text":"I will run the deploy script now."},{"type":"tool_use","id":"t1","name":"Bash","input":{"command":"rtk git push origin dev"}},{"type":"tool_use","id":"t2","name":"Edit","input":{"file_path":"/fixture/app/src/app.py"}},{"type":"tool_use","id":"t3","name":"Skill","input":{"skill":"working-with-git"}}]}}
+{"type":"user","message":{"role":"user","content":[{"type":"tool_result","tool_use_id":"t1","content":"The user doesn't want to proceed with this tool use. The tool use was rejected."}]}}
+{"type":"user","origin":{"kind":"human"},"message":{"role":"user","content":"Use the release branch, here is the key sk-abcdefghijklmnop1234"}}
+{"type":"user","isSidechain":true,"origin":{"kind":"human"},"message":{"role":"user","content":"SIDECHAIN prompt should be ignored"}}
+{"type":"user","message":{"role":"user","content":[{"type":"text","text":"[Request interrupted by user]"}]}}
+{"type":"user","origin":{"kind":"human"},"message":{"role":"user","content":"No, don't touch the vendor directory again"}}
+{"type":"user","toolUseResult":{"questions":[],"answers":{"Run tests?":"Yes"}},"message":{"role":"user","content":[{"type":"tool_result","tool_use_id":"t4","content":"Your questions have been answered"}]}}
+{"type":"user","entrypoint":"sdk-cli","promptSource":"sdk","message":{"role":"user","content":"Compress this markdown file"}}
+{"type": "user", BROKEN
+{"type":"assistant","message":{"role":"assistant","content":42}}

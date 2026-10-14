@@ -77,7 +77,9 @@ kind ∈ prompt | reply | command | skill | edit | interrupt | denial | answer
 
 - Claude Code: `$CLAUDE_CONFIG_DIR/projects/*/*.jsonl`, falling back to
   `~/.claude/projects`. Top-level files only; subagent transcripts are skipped.
-- Codex: `$CODEX_HOME/sessions/**/*.jsonl`, falling back to `~/.codex/sessions`.
+- Codex: `$CODEX_HOME/sessions/**/*.jsonl` and `$CODEX_HOME/archived_sessions/**/*.jsonl`,
+  falling back to `~/.codex`. Newer Codex versions delete old rollout files and
+  keep thread history in SQLite; see "Codex SQLite history" below.
 - `--claude-dir` / `--codex-dir` override. A missing store is skipped with a
   note, so single-agent machines work.
 - `--since YYYY-MM-DD` filters by session start.
@@ -123,6 +125,26 @@ kind ∈ prompt | reply | command | skill | edit | interrupt | denial | answer
 - `apply_patch` input → `edit` turns (`*** Add File:` / `*** Update File:` /
   `*** Delete File:` paths).
 - Assistant `output_text` → `reply` turns.
+
+### Codex SQLite history
+
+Added 2026-10-14 after Codex deleted 393 of 472 rollout files on this machine
+while keeping the threads in SQLite.
+
+- Read only when both `$CODEX_HOME/state_N.sqlite` and
+  `$CODEX_HOME/thread_history_N.sqlite` exist; use the highest `N` of each.
+- Open read-only (`mode=ro`); if that fails, `mode=ro&immutable=1`, which skips
+  writes not yet checkpointed (only affects sessions still running).
+- `threads` gives id, cwd, `git_origin_url`, `git_branch`, `created_at`, and
+  `source` (subagent when it is a JSON object with `subagent`).
+- A thread is rebuilt only when its `rollout_path` no longer exists and no parsed
+  rollout has its id, so nothing is counted twice.
+- `thread_items` in `rollout_ordinal` order: `userMessage` text parts → same
+  rules as Codex user text (answers, injections, `$skill`); `skill` parts →
+  `skill` turn; `agentMessage.text` → `reply`; `commandExecution.command` →
+  `command`; `fileChange.changes[].path` → `edit`.
+- `thread_turns.status == "interrupted"` → `interrupt` turn after that turn.
+- Any `sqlite3.Error` → one `warning:` note; JSONL results still stand.
 
 ### Shared
 

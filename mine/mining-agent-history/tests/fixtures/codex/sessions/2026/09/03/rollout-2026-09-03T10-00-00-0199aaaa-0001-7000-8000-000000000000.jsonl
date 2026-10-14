@@ -1,0 +1,15 @@
+{"timestamp":"2026-09-03T10:00:00.000Z","type":"session_meta","payload":{"id":"0199aaaa-0001-7000-8000-000000000000","timestamp":"2026-09-03T10:00:00.000Z","cwd":"/fixture/gone-worktree","source":"cli","git":{"repository_url":"git@github.com:Acme/App.git","branch":"feature-y"}}}
+{"type":"response_item","payload":{"type":"message","role":"developer","content":[{"type":"input_text","text":"<permissions>developer noise</permissions>"}]}}
+{"type":"response_item","payload":{"type":"message","role":"user","content":[{"type":"input_text","text":"# AGENTS.md instructions for /fixture\n\nbe nice"},{"type":"input_text","text":"<environment_context>\n  <cwd>/fixture</cwd>\n</environment_context>"}]}}
+{"type":"response_item","payload":{"type":"message","role":"user","content":[{"type":"input_text","text":"$handoff merge the feature branch into dev and push dev to origin"}]}}
+{"type":"response_item","payload":{"type":"reasoning","summary":[]}}
+{"type":"response_item","payload":{"type":"custom_tool_call","name":"exec","input":"const r = await tools.exec_command({\"cmd\":\"rtk git push origin dev\",\"workdir\":\"/fixture\"});"}}
+{"type":"response_item","payload":{"type":"function_call","name":"exec_command","arguments":"{\"cmd\":\"sed -n 1,80p /x/skills/working-with-git/SKILL.md\"}"}}
+{"type":"response_item","payload":{"type":"custom_tool_call","name":"apply_patch","input":"*** Begin Patch\n*** Update File: src/app.py\n@@\n-a\n+b\n*** Add File: src/new.py\n+x\n*** End Patch"}}
+{"type":"response_item","payload":{"type":"message","role":"assistant","content":[{"type":"output_text","text":"Pushed dev."}]}}
+{"type":"response_item","payload":{"type":"message","role":"user","content":[{"type":"input_text","text":"<turn_aborted>\nThe previous turn was interrupted on purpose.\n</turn_aborted>"}]}}
+{"type":"response_item","payload":{"type":"message","role":"user","content":[{"type":"input_text","text":"use the release branch instead"}]}}
+{"type":"response_item","payload":{"type":"message","role":"user","content":[{"type":"input_text","text":"<send_user_message_question_reply> [{\"answer\":\"Yes\",\"question\":\"Add tests?\"}]"}]}}
+{"type":"event_msg","payload":{"type":"token_count","info":null}}
+{"type":"response_item","payload":{"type":"function_call","name":"shell","arguments":"{\"command\":[\"bash\",\"-lc\",\"npm test\"]}"}}
+{"type":"session_meta","payload":{"id":"ffffffff-0000-7000-8000-000000000000","timestamp":"2026-09-04T00:00:00.000Z","cwd":"/other"}}
