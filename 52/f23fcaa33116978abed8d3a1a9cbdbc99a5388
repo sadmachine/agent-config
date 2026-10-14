@@ -1,0 +1,19 @@
+mine/asanamate-hub-release/SKILL.md
+  s_4a55170f3ce686::t_2846307a13fd38 1-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "52f23fcaa33116978abed8d3a1a9cbdbc99a5388",
+  "prompts": {},
+  "sessions": {
+    "s_4a55170f3ce686": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f3b1d2cb-5b9b-4134-a99d-27473a370171",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Austin Fishbaugh <austinfishbaugh@imarc.com>"
+    }
+  }
+}
