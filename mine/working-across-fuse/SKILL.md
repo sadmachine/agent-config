@@ -5,7 +5,7 @@ description: Use when a task spans more than one Fuse site, or targets a Fuse si
 
 # Working Across Fuse
 
-Locate the Fuse sites, then run **targeted** work against each one. Single-site work belongs to `working-with-fuse`.
+Locate the Fuse sites, then run **targeted** work against each one. Inside a site, its `vendor/imarc/cpa-tech/AGENTS.md` and `.agents/skills/` own the rules.
 
 ## Listing The Sites
 
@@ -21,7 +21,7 @@ If `sites_file` is missing, fall back to the criteria scan below. If `sites_root
 
 ## Identifying A Fuse Site
 
-A directory is a Fuse site when both hold: `bin/hiraeth` exists, and `composer.json` requires `imarc/cpa-tech`. `working-with-fuse` owns this criteria and the rules for editing inside a site; consult it before changing any site's code.
+A directory is a Fuse site when both hold: `bin/hiraeth` exists, and `composer.json` requires `imarc/cpa-tech`. Before changing a site's code, read that site's `vendor/imarc/cpa-tech/AGENTS.md`: a site outside the working directory never loads it on its own.
 
 Scan, when the curated list is unavailable or a site's membership is in question:
 
@@ -39,7 +39,7 @@ Each site keeps its release worktree at `$FUSE_SITES_DIRECTORY/.worktrees/<site>
 The release worktree is read-only. Every change belongs on its own worktree, branched off remote `release`.
 </EXTREMELY-IMPORTANT>
 
-Once a probe marks a site as affected, create that worktree. `working-with-fuse` owns the branch name (Asana `Branch Name`, else `<update|bugfix|feature>/<number>-<two-to-three-word-summary>`):
+Once a probe marks a site as affected, create that worktree. Name the branch with the site's `.agents/skills/fuse-branch/SKILL.md`, then create it as a worktree instead of following that skill's step 5:
 
 ```bash
 WT="$FUSE_SITES_DIRECTORY/.worktrees/<site>"
@@ -61,6 +61,6 @@ Work from a narrow question, asked the same way at every site:
 1. **Name the signal first** — the symbol, config key, template path, or dependency constraint that decides whether a site is affected.
 2. **Probe each site's release worktree**, one command, output trimmed to the answer: `grep -rl`, `grep -c`, `jq` on `composer.json`, a file-existence test. Collect the results into one affected/unaffected list before opening anything.
 3. **Open files only at the sites the probe named**, and only the files it named.
-4. **Apply the change on a per-site branch worktree**, following `working-with-fuse` for layer ownership and verification. Sites are separate repos: separate branches, diffs, and commits.
+4. **Apply the change on a per-site branch worktree**, following the site's `AGENTS.md` and `.agents/skills/` for layer ownership and verification. Sites are separate repos: separate branches, diffs, and commits.
 
 Report the full list — affected, unaffected, and any site the probe could not answer for.
